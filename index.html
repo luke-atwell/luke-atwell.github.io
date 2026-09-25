@@ -1,158 +1,758 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Luke Lewis-Atwell | Mechanical Engineering</title>
+    <title>Luke Atwell | Mechanical Engineering</title>
+
+    <meta name="description"
+        content="Mechanical Engineering portfolio of Luke Atwell, including a composite extension handle developed for the Hexagon AS1 laser scanner.">
 
     <style>
+
+        /* -------------------------
+           GENERAL
+        ------------------------- */
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 40px 20px;
-            color: #222;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+                         Roboto, Helvetica, Arial, sans-serif;
+            background: #f7f8fa;
+            color: #17191c;
+            line-height: 1.7;
         }
 
-        header {
-            margin-bottom: 50px;
+        a {
+            color: inherit;
         }
 
-        h1 {
-            font-size: 42px;
-            margin-bottom: 5px;
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 0 30px;
         }
 
-        h2 {
-            margin-top: 45px;
-            border-bottom: 2px solid #ddd;
-            padding-bottom: 8px;
+
+        /* -------------------------
+           NAVIGATION
+        ------------------------- */
+
+        nav {
+            height: 75px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid #e5e7eb;
+            background: rgba(247, 248, 250, 0.95);
         }
 
-        .subtitle {
-            font-size: 20px;
+        .logo {
+            font-weight: 700;
+            font-size: 18px;
+            letter-spacing: -0.5px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #555;
+            font-size: 14px;
+            transition: color 0.2s;
+        }
+
+        nav a:hover {
+            color: #000;
+        }
+
+
+        /* -------------------------
+           HERO
+        ------------------------- */
+
+        .hero {
+            padding: 110px 0 100px;
+        }
+
+        .hero-label {
+            display: inline-block;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: clamp(45px, 7vw, 76px);
+            line-height: 1.05;
+            letter-spacing: -3px;
+            max-width: 850px;
+            margin-bottom: 25px;
+        }
+
+        .hero h1 span {
             color: #666;
         }
 
-        .project {
-            margin-top: 30px;
+        .hero-description {
+            font-size: 20px;
+            color: #5d6269;
+            max-width: 700px;
+            margin-bottom: 35px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
         }
 
         .button {
             display: inline-block;
-            padding: 10px 18px;
-            margin-top: 10px;
-            background: #222;
-            color: white;
+            padding: 13px 22px;
+            border-radius: 6px;
             text-decoration: none;
-            border-radius: 5px;
+            font-size: 14px;
+            font-weight: 600;
+            transition: all 0.2s;
         }
+
+        .button-primary {
+            background: #17191c;
+            color: white;
+        }
+
+        .button-primary:hover {
+            background: #333;
+            transform: translateY(-2px);
+        }
+
+        .button-secondary {
+            border: 1px solid #d5d8dc;
+            background: white;
+        }
+
+        .button-secondary:hover {
+            border-color: #999;
+            transform: translateY(-2px);
+        }
+
+
+        /* -------------------------
+           PROJECT HEADER
+        ------------------------- */
+
+        .project-header {
+            padding: 80px 0 40px;
+        }
+
+        .section-label {
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: #777;
+            margin-bottom: 12px;
+        }
+
+        .project-header h2 {
+            font-size: clamp(32px, 5vw, 52px);
+            line-height: 1.15;
+            letter-spacing: -1.5px;
+            max-width: 850px;
+            margin-bottom: 20px;
+        }
+
+        .project-header p {
+            font-size: 18px;
+            color: #62676e;
+            max-width: 760px;
+        }
+
+
+        /* -------------------------
+           PROJECT IMAGE
+        ------------------------- */
+
+        .project-image {
+            margin: 35px 0 90px;
+            height: 480px;
+            background: #e4e7eb;
+            border-radius: 12px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #777;
+            border: 1px solid #ddd;
+        }
+
+        .project-image p {
+            font-size: 14px;
+        }
+
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+
+        /* -------------------------
+           CONTENT SECTIONS
+        ------------------------- */
+
+        section.content {
+            padding: 80px 0;
+            border-top: 1px solid #e2e4e7;
+        }
+
+        .two-column {
+            display: grid;
+            grid-template-columns: 0.8fr 1.5fr;
+            gap: 80px;
+        }
+
+        .two-column h3 {
+            font-size: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #777;
+        }
+
+        .two-column p {
+            font-size: 17px;
+            color: #4e5359;
+            margin-bottom: 20px;
+        }
+
+
+        /* -------------------------
+           PROCESS CARDS
+        ------------------------- */
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+            margin-top: 35px;
+        }
+
+        .process-card {
+            background: white;
+            border: 1px solid #e1e3e6;
+            border-radius: 10px;
+            padding: 28px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .process-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+        }
+
+        .process-number {
+            font-size: 13px;
+            color: #888;
+            font-weight: 700;
+            margin-bottom: 18px;
+        }
+
+        .process-card h3 {
+            font-size: 19px;
+            margin-bottom: 10px;
+        }
+
+        .process-card p {
+            color: #666;
+            font-size: 14px;
+        }
+
+
+        /* -------------------------
+           SKILLS
+        ------------------------- */
 
         .skills {
             display: flex;
             flex-wrap: wrap;
             gap: 10px;
+            margin-top: 30px;
         }
 
         .skill {
-            background: #eee;
-            padding: 7px 12px;
-            border-radius: 4px;
+            background: white;
+            border: 1px solid #dddfe3;
+            padding: 9px 14px;
+            border-radius: 5px;
+            font-size: 14px;
+            color: #444;
         }
 
+
+        /* -------------------------
+           CTA
+        ------------------------- */
+
+        .cta {
+            background: #17191c;
+            color: white;
+            border-radius: 12px;
+            padding: 60px;
+            margin: 80px 0;
+        }
+
+        .cta h2 {
+            font-size: 34px;
+            letter-spacing: -1px;
+            margin-bottom: 12px;
+        }
+
+        .cta p {
+            color: #bfc3c8;
+            max-width: 600px;
+            margin-bottom: 25px;
+        }
+
+        .cta .button {
+            background: white;
+            color: #17191c;
+        }
+
+        .cta .button:hover {
+            background: #eee;
+        }
+
+
+        /* -------------------------
+           FOOTER
+        ------------------------- */
+
         footer {
-            margin-top: 60px;
+            border-top: 1px solid #dddfe3;
+            padding: 35px 0;
             color: #777;
             font-size: 14px;
         }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        footer a {
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+
+        /* -------------------------
+           MOBILE
+        ------------------------- */
+
+        @media (max-width: 700px) {
+
+            .container {
+                padding: 0 20px;
+            }
+
+            nav ul {
+                gap: 15px;
+            }
+
+            nav ul li:nth-child(1) {
+                display: none;
+            }
+
+            .hero {
+                padding: 75px 0;
+            }
+
+            .hero h1 {
+                letter-spacing: -2px;
+            }
+
+            .hero-description {
+                font-size: 17px;
+            }
+
+            .project-image {
+                height: 280px;
+            }
+
+            .two-column {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .process-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cta {
+                padding: 35px 25px;
+            }
+
+            .footer-content {
+                flex-direction: column;
+            }
+        }
+
     </style>
 </head>
 
+
 <body>
 
-    <header>
-        <h1>Luke Atwell</h1>
-        <div class="subtitle">
-            Mechanical Engineering | First Class Honours
-        </div>
-    </header>
 
+    <!-- NAVIGATION -->
 
-    <section>
-        <h2>Dissertation Project</h2>
+    <nav>
+        <div class="container" style="display:flex; width:100%; justify-content:space-between; align-items:center;">
 
-        <div class="project">
+            <div class="logo">
+                Luke Atwell
+            </div>
 
-            <h3>
-                Composite Extension Handle for the Hexagon AS1 Laser Scanner
-            </h3>
-
-            <p>
-                Full lifecycle development of a composite aluminium and carbon
-                fibre extension handle for a Hexagon AS1 laser scanner.
-            </p>
-
-            <p>
-                The project involved concept development, CAD design,
-                finite element analysis, material selection, physical
-                prototyping and development of a mechanical trigger linkage.
-            </p>
-
-            <a class="button" href="dissertation.pdf">
-                View Full Dissertation
-            </a>
+            <ul>
+                <li><a href="#project">Project</a></li>
+                <li><a href="#process">Development</a></li>
+                <li><a href="#skills">Skills</a></li>
+            </ul>
 
         </div>
-    </section>
+    </nav>
 
 
-    <section>
-        <h2>Project Overview</h2>
 
-        <p>
-            The project involved developing an extension handle that could
-            improve the usability of the laser scanner while maintaining
-            appropriate structural performance and low weight.
-        </p>
+    <!-- HERO -->
 
-        <p>
-            Multiple SolidWorks CAD iterations were developed with
-            consideration given to machining, assembly and material selection.
-            ANSYS finite element analysis was then used to investigate the
-            structural behaviour of the design before physical prototyping.
-        </p>
+    <main>
 
-        <p>
-            The final prototype incorporated a Bowden cable operated trigger
-            linkage actuated using a custom 3D-printed ergonomic motorcycle
-            clutch lever.
-        </p>
+        <div class="container">
 
-    </section>
+            <section class="hero">
+
+                <div class="hero-label">
+                    Mechanical Engineering
+                </div>
+
+                <h1>
+                    Engineering design,
+                    <span>from concept to prototype.</span>
+                </h1>
+
+                <p class="hero-description">
+                    First Class Mechanical Engineering graduate with a focus on
+                    mechanical design, CAD, finite element analysis and practical
+                    prototyping.
+                </p>
+
+                <div class="buttons">
+
+                    <a class="button button-primary" href="#project">
+                        View Project
+                    </a>
+
+                    <a class="button button-secondary" href="dissertation.pdf">
+                        View Dissertation
+                    </a>
+
+                </div>
+
+            </section>
 
 
-    <section>
-        <h2>Technical Skills</h2>
 
-        <div class="skills">
-            <span class="skill">SolidWorks</span>
-            <span class="skill">ANSYS FEA</span>
-            <span class="skill">Mechanical Design</span>
-            <span class="skill">Composite Materials</span>
-            <span class="skill">CAD</span>
-            <span class="skill">Prototyping</span>
-            <span class="skill">3D Printing</span>
-            <span class="skill">Material Selection</span>
+            <!-- PROJECT -->
+
+            <section id="project">
+
+                <div class="project-header">
+
+                    <div class="section-label">
+                        Featured Project
+                    </div>
+
+                    <h2>
+                        Composite Extension Handle for the Hexagon AS1 Laser Scanner
+                    </h2>
+
+                    <p>
+                        Full lifecycle development of a lightweight extension
+                        handle combining aluminium and carbon fibre construction
+                        with a mechanical trigger actuation system.
+                    </p>
+
+                </div>
+
+
+                <!-- IMAGE PLACEHOLDER -->
+
+                <div class="project-image">
+
+                    <p>
+                        Project image — we'll add this next
+                    </p>
+
+                </div>
+
+
+                <!-- OVERVIEW -->
+
+                <section class="content">
+
+                    <div class="two-column">
+
+                        <h3>
+                            Project Overview
+                        </h3>
+
+                        <div>
+
+                            <p>
+                                The project involved the development of an extension
+                                handle for a Hexagon AS1 laser scanner. The design
+                                needed to provide the required structural performance
+                                while keeping weight low and allowing the scanner
+                                to be operated remotely.
+                            </p>
+
+                            <p>
+                                The project covered the full development process,
+                                from initial concept generation through CAD
+                                development and finite element analysis to physical
+                                prototyping and evaluation.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- DEVELOPMENT -->
+
+                <section class="content" id="process">
+
+                    <div class="section-label">
+                        Design & Development
+                    </div>
+
+                    <h2>
+                        From concept to working prototype
+                    </h2>
+
+                    <div class="process-grid">
+
+                        <div class="process-card">
+
+                            <div class="process-number">
+                                01 — CONCEPT
+                            </div>
+
+                            <h3>
+                                Concept Development
+                            </h3>
+
+                            <p>
+                                Developed and evaluated multiple concepts while
+                                considering functionality, materials,
+                                manufacturability and assembly.
+                            </p>
+
+                        </div>
+
+
+                        <div class="process-card">
+
+                            <div class="process-number">
+                                02 — CAD & FEA
+                            </div>
+
+                            <h3>
+                                Digital Design
+                            </h3>
+
+                            <p>
+                                Created multiple SolidWorks iterations and used
+                                ANSYS finite element analysis to investigate
+                                structural behaviour and refine the design.
+                            </p>
+
+                        </div>
+
+
+                        <div class="process-card">
+
+                            <div class="process-number">
+                                03 — PROTOTYPE
+                            </div>
+
+                            <h3>
+                                Physical Prototype
+                            </h3>
+
+                            <p>
+                                Manufactured and assembled a physical prototype,
+                                incorporating a Bowden cable trigger system and
+                                custom 3D-printed lever.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- TECHNICAL DETAILS -->
+
+                <section class="content">
+
+                    <div class="two-column">
+
+                        <h3>
+                            Engineering Approach
+                        </h3>
+
+                        <div>
+
+                            <p>
+                                CAD development was carried out iteratively, with
+                                changes made to improve manufacturability and
+                                assembly as the design progressed.
+                            </p>
+
+                            <p>
+                                Carbon fibre was used where weight reduction was
+                                particularly valuable, while aluminium provided
+                                suitable structural and manufacturing characteristics
+                                for other components.
+                            </p>
+
+                            <p>
+                                Finite element analysis was used to assess the
+                                structural response of the design and inform
+                                subsequent design decisions.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- SKILLS -->
+
+                <section class="content" id="skills">
+
+                    <div class="section-label">
+                        Technical Skills
+                    </div>
+
+                    <h2>
+                        Tools & Engineering Experience
+                    </h2>
+
+                    <div class="skills">
+
+                        <span class="skill">SolidWorks</span>
+                        <span class="skill">ANSYS</span>
+                        <span class="skill">Finite Element Analysis</span>
+                        <span class="skill">Mechanical Design</span>
+                        <span class="skill">CAD</span>
+                        <span class="skill">Composite Materials</span>
+                        <span class="skill">Material Selection</span>
+                        <span class="skill">Prototyping</span>
+                        <span class="skill">3D Printing</span>
+                        <span class="skill">Design for Manufacture</span>
+                        <span class="skill">Design for Assembly</span>
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- CTA -->
+
+                <div class="cta">
+
+                    <h2>
+                        Read the full dissertation
+                    </h2>
+
+                    <p>
+                        The complete project report contains the detailed design
+                        process, engineering calculations, finite element analysis,
+                        manufacturing considerations and prototype development.
+                    </p>
+
+                    <a class="button" href="dissertation.pdf">
+                        View Dissertation →
+                    </a>
+
+                </div>
+
+            </section>
+
         </div>
 
-    </section>
+    </main>
 
+
+
+    <!-- FOOTER -->
 
     <footer>
-        © 2026 Luke Atwell
+
+        <div class="container">
+
+            <div class="footer-content">
+
+                <div>
+                    © 2026 Luke Atwell
+                </div>
+
+                <div>
+                    Mechanical Engineering · First Class Honours
+                </div>
+
+            </div>
+
+        </div>
+
     </footer>
 
+
 </body>
+
 </html>
