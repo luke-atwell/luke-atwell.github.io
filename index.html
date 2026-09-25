@@ -249,12 +249,59 @@
            PROCESS CARDS
         ------------------------- */
 
-        .process-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 18px;
-            margin-top: 35px;
-        }
+       /* -------------------------
+   PROJECT STAGES
+------------------------- */
+
+.stage {
+    padding: 90px 0;
+    border-top: 1px solid #e2e4e7;
+}
+
+.stage-header {
+    max-width: 750px;
+    margin-bottom: 40px;
+}
+
+.stage-header h2 {
+    font-size: clamp(30px, 4vw, 46px);
+    line-height: 1.15;
+    letter-spacing: -1.2px;
+    margin-bottom: 18px;
+}
+
+.stage-header p {
+    font-size: 17px;
+    color: #5d6269;
+}
+
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.image-card {
+    background: white;
+    border: 1px solid #dddfe3;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.image-card img {
+    display: block;
+    width: 100%;
+    height: 360px;
+    object-fit: contain;
+    background: white;
+}
+
+.image-caption {
+    padding: 15px 18px;
+    border-top: 1px solid #eee;
+    font-size: 13px;
+    color: #777;
+}
 
         .process-card {
             background: white;
@@ -374,6 +421,13 @@
 
         @media (max-width: 700px) {
 
+            .image-grid {
+            grid-template-columns: 1fr;
+            }
+
+            .image-card img {
+            height: 300px;
+            }
             .container {
                 padding: 0 20px;
             }
@@ -519,6 +573,39 @@
 
                 </div>
 
+                <!-- SCANNER -->
+
+<section class="stage">
+
+    <div class="stage-header">
+
+        <div class="section-label">
+            The System
+        </div>
+
+        <h2>
+            Hexagon AS1 Laser Scanner
+        </h2>
+
+        <p>
+            The extension handle was designed around the Hexagon AS1 laser
+            scanner, allowing the scanner to be operated from an extended
+            position while maintaining a practical and lightweight system.
+        </p>
+
+    </div>
+
+    <div class="image-card">
+
+        <img src="as1.png" alt="Hexagon AS1 laser scanner">
+
+        <div class="image-caption">
+            Hexagon AS1 laser scanner
+        </div>
+
+    </div>
+
+</section>
 
                 <!-- OVERVIEW -->
 
@@ -555,81 +642,157 @@
 
 
 
-                <!-- DEVELOPMENT -->
+               <!-- DEVELOPMENT -->
 
-                <section class="content" id="process">
+<section class="stage" id="process">
 
-                    <div class="section-label">
-                        Design & Development
-                    </div>
+    <div class="stage-header">
 
-                    <h2>
-                        From concept to working prototype
-                    </h2>
+        <div class="section-label">
+            01 — Concept Development
+        </div>
 
-                    <div class="process-grid">
+        <h2>
+            Exploring the design space
+        </h2>
 
-                        <div class="process-card">
+        <p>
+            Multiple concepts were developed and evaluated before progressing
+            to detailed CAD. The design process considered functionality,
+            structural requirements, material selection, manufacturability
+            and assembly.
+        </p>
 
-                            <div class="process-number">
-                                01 — CONCEPT
-                            </div>
+    </div>
 
-                            <h3>
-                                Concept Development
-                            </h3>
+    <div class="image-grid">
 
-                            <p>
-                                Developed and evaluated multiple concepts while
-                                considering functionality, materials,
-                                manufacturability and assembly.
-                            </p>
+        <div class="image-card">
 
-                        </div>
+            <img src="concept1.png"
+                 alt="Initial concept development">
 
+            <div class="image-caption">
+                Initial concept development
+            </div>
 
-                        <div class="process-card">
+        </div>
 
-                            <div class="process-number">
-                                02 — CAD & FEA
-                            </div>
+        <div class="image-card">
 
-                            <h3>
-                                Digital Design
-                            </h3>
+            <img src="concept2.png"
+                 alt="Concept development and refinement">
 
-                            <p>
-                                Created multiple SolidWorks iterations and used
-                                ANSYS finite element analysis to investigate
-                                structural behaviour and refine the design.
-                            </p>
+            <div class="image-caption">
+                Concept development and refinement
+            </div>
 
-                        </div>
+        </div>
 
+    </div>
 
-                        <div class="process-card">
+</section>
+                <!-- PROTOTYPE -->
 
-                            <div class="process-number">
-                                03 — PROTOTYPE
-                            </div>
+<section class="stage">
 
-                            <h3>
-                                Physical Prototype
-                            </h3>
+    <div class="stage-header">
 
-                            <p>
-                                Manufactured and assembled a physical prototype,
-                                incorporating a Bowden cable trigger system and
-                                custom 3D-printed lever.
-                            </p>
+        <div class="section-label">
+            03 — Prototyping
+        </div>
 
-                        </div>
+        <h2>
+            From CAD to physical prototype
+        </h2>
 
-                    </div>
+        <p>
+            The final design was manufactured and assembled as a physical
+            prototype. The system incorporated a Bowden cable operated
+            trigger linkage actuated using a custom 3D-printed ergonomic
+            motorcycle clutch lever.
+        </p>
 
-                </section>
+    </div>
 
+    <div class="image-grid">
 
+        <div class="image-card">
+
+            <img src="prototype1.png"
+                 alt="Physical prototype">
+
+            <div class="image-caption">
+                Physical prototype
+            </div>
+
+        </div>
+
+        <div class="image-card">
+
+            <img src="prototype2.png"
+                 alt="Completed prototype and trigger mechanism">
+
+            <div class="image-caption">
+                Completed prototype and mechanical actuation
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+                <!-- DESIGN -->
+
+<section class="stage">
+
+    <div class="stage-header">
+
+        <div class="section-label">
+            02 — Design & Analysis
+        </div>
+
+        <h2>
+            Developing the final design
+        </h2>
+
+        <p>
+            The selected concept was developed through multiple SolidWorks
+            iterations. CAD modelling and finite element analysis were used
+            to refine the geometry and investigate structural performance,
+            while also considering manufacturing and assembly.
+        </p>
+
+    </div>
+
+    <div class="image-grid">
+
+        <div class="image-card">
+
+            <img src="design1.png"
+                 alt="Detailed CAD design">
+
+            <div class="image-caption">
+                Detailed CAD development
+            </div>
+
+        </div>
+
+        <div class="image-card">
+
+            <img src="design2.png"
+                 alt="Engineering analysis of the design">
+
+            <div class="image-caption">
+                Engineering analysis and design refinement
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
 
                 <!-- TECHNICAL DETAILS -->
 
